@@ -1,7 +1,12 @@
+
 import logo from './logo.svg';
 import './App.css';
-
+import { useState } from './hook/useState';
+import { useEffect } from 'react';
 function App() {
+  const [state, setState] = useState('Kamal');
+  useEffect(() => {
+  }, [state])
   return (
     <div className="App">
       <header className="App-header">
@@ -17,6 +22,7 @@ function App() {
         >
           Learn React
         </a>
+        <input type={'text'} name="name" onChange={(e) => setState(e.target.value)} />
       </header>
     </div>
   );
